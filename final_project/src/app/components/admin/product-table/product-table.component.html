@@ -1,0 +1,55 @@
+<div style="height: 80vh; margin-bottom: 30vh; " class="container mt-5">
+
+  <!-- header title -addbutton- search -->
+  <div style="background-color: #3b5d4f;" class="row alert text-center">
+    <div class="col-6 ">
+      <h3 class=" text-start text-light">All Product</h3>
+    </div>
+
+    <div class="col-6 text-end">
+      <button [routerLink]="['/add_product','0','edit']" class="btn  btn-light align-self-end">Add New
+        Product</button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- table -->
+  <div style="height: 100% ;background-color: white; overflow-y: scroll;">
+    <table class="table table-bordered mb-5">
+
+      <thead>
+        <tr>
+          <th class="text-center" scope="col-2 text-center">Name</th>
+          <th class="text-center" scope="col text-center">Category</th>
+          <th class="text-center" scope="col-2 text-center">Price</th>
+          <th class="text-center" scope="col-2 text-center">Image</th>
+          <th class="text-center" class="col-2 text-center" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-center" *ngFor="let Product of products">
+          <td>{{Product.title}}</td>
+          <td>{{Product.category}}</td>
+          <td>{{Product.price}}</td>
+          <td class="align-items-center justify-content-center">
+            <div class="align-items-center justify-content-center">
+              <img src="{{Product.image}}" alt="" style="width: 80px; height: 80px" />
+            </div>
+          </td>
+          <td class="col-2 text-center">
+            <a [routerLink]="['/add_product',Product.id,'edit']"><i style="color: #3b5d4f;"
+                class="bi bi-pencil-square fs-3 mx-1"></i></a>
+            <a (click)="openDetails(Product.id)"><i style="color: #3b5d4f;" class="bi bi-eye-fill fs-3 mx-1"></i></a>
+            <a (click)="DeleteProduct(Product.id)"><i class="bi bi-trash3-fill text-danger fs-3 mx-1"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- table -->
+</div>

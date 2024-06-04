@@ -1,0 +1,139 @@
+<div class="container-fluid parentCarts d-flex align-items-center ">
+    <div class=" parents pb-4">
+        <div *ngIf="emptyCart; else cartproduct "
+            class="text-center d-flex justify-content-center align-items-center cartclear">
+            <div class="col-12 ">
+                <img src="assets/Images/clear-cart.svg" class="ps-5 imagcart" alt="" style="width: 200px; hight:200px;">
+                <h2 class="Empty mt-5 ">Your cart is currently empty!</h2>
+                <!-- here back tooooooooooooooooooooooooooooooo  -->
+
+                <a [routerLink]="['/products']" class="btn btn-black btn-block btn-cart mt-5 ms-5">Browse store</a>
+                <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+                <h4 class="Empty store ms-5">New in store</h4>
+                <div id="carouselExampleControls" class="carousel slide ">
+                    <div class="carousel-inner  productscroll">
+                        <div class="carousel-item " *ngFor="let product of proudctall; let i = index"
+                            [class.active]="i === 0">
+                            <div class="card">
+                                <div class="img-wrapper">
+                                    <img src="{{ product.image }}" class="d-block p-3 h-100" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <p class="card-text">{{ product.price|currency }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <ng-template #cartproduct>
+            <a [routerLink]="['']" style="color: #3b5d50;">
+                <svg style="position: absolute;right: 4vw;top:6vh;" xmlns="http://www.w3.org/2000/svg" width="32"
+                    height="32" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
+                    <path
+                        d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z" />
+                </svg>
+            </a>
+            <div class="d-flex justify-content-between " style="margin-top: 5vh; width: 95vw;height: 80vh;">
+                <div class="mt-4 " style="width: 60vw; margin-left: 2vw;">
+                    <table class="table ">
+                        <thead class="justify-content-around">
+                            <tr scope="row" style="width: 100%;">
+                                <th scope="col" class="headerTabel text-center" style="width: 6vw;padding-left: 2vw;">
+                                    Product
+                                </th>
+                                <th scope="col" class="headerTabel text-center" style="width: 9vw;">
+                                    title</th>
+                                <th scope="col" class="headerTabel text-center" style="width: 7vw;">
+                                    price</th>
+
+                                <th scope="col" class="headerTabel text-center "
+                                    style="width: 6vw;padding-left: 1vw;padding-right: 2vw;">
+                                    Quantity</th>
+                                <th scope="col" class="headerTabel  text-start " style="width: 10vw;">Total
+                                </th>
+                            </tr>
+
+                        </thead>
+                    </table>
+                    <div class="overflow-y-scroll hi">
+                        <ng-container *ngFor="let product of productData">
+                            <div class="card rounded-3 mb-4">
+                                <div class="card-body ps-4 py-4">
+                                    <div class="row d-flex  justify-content-between align-items-center">
+                                        <div class="col-2">
+                                            <div class="bg-image hover-zoom ripple rounded  text-center containers "
+                                                data-mdb-ripple-color="light">
+
+                                                <img [src]="product.image" class="img-fluid position-relative"
+                                                    style=" height: 70px;" alt="Product Image" />
+
+                                            </div>
+                                        </div>
+                                        <div class="col-2   w-25">
+                                            <p class="  " style="font-size: 12px; font-weight: 550;">{{product.title}}
+                                            </p>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="text-start ">{{product.price|currency }}</p>
+                                        </div>
+                                        <div class="col-2 d-flex text-start quntity-container  mb-3">
+                                            <div class="px-2 py-1 icon"
+                                                style="background-color: #3b5d50; border-radius: 10px 0px 0px  10px ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-dash-lg " viewBox="0 0 16 16"
+                                                    style=" color:white" (click)="decrementQuantity(product)">
+                                                    <path fill-rule="evenodd"
+                                                        d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8" />
+                                                </svg>
+                                            </div>
+                                            <p class="qun">{{product.quantity}}</p>
+                                            <div class="px-2 py-1"
+                                                style="background-color: #3b5d50; border-radius: 0px 10px 10px  0px ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-plus-lg mr-2 " viewBox="0 0 16 16"
+                                                    style="  color:white" (click)="incrementQuantity(product)">
+                                                    <path fill-rule="evenodd"
+                                                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 ">
+                                            <div style="display: flex;" class=" justify-content-between ml-3 ">
+                                                <p class=" text-start px-3  ">
+                                                    {{product.quantity*product.price|currency}}</p>
+                                                <div class="  text-center " style="width: 5vw;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-trash3 text-danger   "
+                                                        viewBox="0 0 16 16" (click)="deleteProductHandelr(product.id)">
+                                                        <path
+                                                            d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class=" ">
+                    <app-cart-check-out class=" mt-3 ml-3  ps-2 pl-5" [total]="total"
+                        [Subtotal]="total"></app-cart-check-out>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0 my-3" (click)=" updatacheck()">
+                    <a class="btn btn-block" style="background-color: #3b5d50; margin-left: 2vw;">Update Cart</a>
+
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

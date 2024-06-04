@@ -1,0 +1,74 @@
+.modal .modal-dialog {
+    margin-top: 20vh;
+}
+
+.modal .modal-dialog .modal-content {
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    padding-inline: 5vw;
+    padding-block: 5vh;
+    position: relative;
+}
+
+.modal .modal-dialog .modal-content .exit {
+    position: absolute;
+    right: 1.5vw;
+    top: 2vh;
+    color: #3b5d50;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.modal .modal-dialog .modal-content .imgContainer {
+    width: 30vw;
+    margin-right: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modal-dialog .modal-content img {
+    max-height: 50vh;
+    max-width: 20vw;
+}
+
+.modal .modal-dialog .modal-content .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 7vh;
+    padding-top: 3vh;
+}
+
+.modal .modal-dialog .modal-content .details .title {
+    color: #3b5d50;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.modal .modal-dialog .modal-content .details .price {
+    text-align: start;
+    color: #3b5d50;
+}
+
+.modal .modal-dialog .modal-content .details .starsContainer {
+    display: flex;
+    width: 8vw;
+    justify-content: space-between;
+}
+
+.modal .modal-dialog .modal-content .details .starsContainer .star {
+    color: orange;
+}
+
+.modal .modal-dialog .modal-content .okbtn {
+    background-color: #3b5d50;
+    color: white;
+    padding-inline: 3vw;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 2vh;
+    right: 1.5vw;
+}

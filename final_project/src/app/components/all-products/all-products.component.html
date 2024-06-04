@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <app-categories (changeCateg)="ChangeProdutsList($event)"></app-categories>
+    <app-products-title [productCategory]="productsShow[0].category" (changeLayout)="toggleLayout()"
+        [count]="productsInCart.length"></app-products-title>
+    <div class="container" [style.flex-direction]="layoutGrid?'row':'column'"
+        [style.justify-content]="layoutGrid?'center':'start'" [style.align-items]="!layoutGrid?'center':'start'">
+        <div *ngFor="let product of productsShow" class="products" [class.listProducts]="!layoutGrid">
+            <app-product (passProductEditToParent)="EditProduct($event)" [layoutGrid]="layoutGrid" [ID]="product.id"
+                (changeProductsInCart)="ChangeProductsInCart($event)" [inCart]="productsInCart"
+                (openDetailsForm)="openDetails($event)"></app-product>
+        </div>
+    </div>
+    <app-product-details (detailsRate)="EditProduct($event)" [modalID]="modalID"
+        [details]="details"></app-product-details>
+</div>

@@ -1,0 +1,68 @@
+<div class=" container  mt-5 bg-light p-2 ">
+
+    <h3 class="text-center mt-1 p-3">Add New Admin</h3>
+
+
+
+
+    <!-- form -->
+
+    <form class="p-5 " (submit)="AdminHand($event)" [formGroup]="AdminForm">
+
+        <!-- name of product -->
+        <div class="mb-3 inputForm">
+            <label for="exampleInputName" class="form-label">Fulll Name</label>
+            <input name="title" type="text" class="form-control" id="exampleInputProductName"
+                aria-describedby="emailHelp" formControlName="fullName">
+            <ng-container *ngIf="getFullName.touched">
+                <div *ngIf="getFullName.hasError('required')" id="emailHelp" class="form-text text-danger">Full Name Is
+                    requird</div>
+
+            </ng-container>
+        </div>
+        <div class="mb-3 inputForm">
+            <label for="exampleInputDescription" class="form-label">User Name</label>
+            <input type="text" name="desc" class="form-control" formControlName="userName" />
+            <ng-container *ngIf="getUserName.touched">
+                <div *ngIf="getUserName.hasError('required')" id="emailHelp" class="form-text text-danger">User Name Is
+                    requird</div>
+
+            </ng-container>
+        </div>
+        <!-- price -->
+        <div class="mb-3 inputForm">
+            <label for="exampleInputPrice" class="form-label">Email</label>
+            <input name="price" type="email" class="form-control" id="exampleInputPrice" formControlName="email">
+            <ng-container *ngIf="getEmail.touched">
+                <div *ngIf="getEmail.hasError('required')" id="emailHelp" class="form-text text-danger">Email Is
+                    requird</div>
+
+            </ng-container>
+        </div>
+        <div class="mb-3 inputForm">
+            <label for="exampleInputPrice" class="form-label">Password</label>
+            <input name="price" type="password" class="form-control" id="exampleInputPrice" formControlName="password">
+            <ng-container *ngIf="getPassword.touched">
+                <div *ngIf="getPassword.hasError('required')" id="emailHelp" class="form-text text-danger">password Is
+                    requird</div>
+
+            </ng-container>
+        </div>
+        <div class="mb-3 inputForm">
+            <label for="exampleInputPrice" class="form-label">Confirm Password</label>
+            <input name="price" type="password" class="form-control" id="exampleInputPrice"
+                formControlName="confirmPassword">
+            <ng-container *ngIf="getConfirmPassword.touched">
+                <div *ngIf="getConfirmPassword.hasError('required')" id="emailHelp" class="form-text text-danger">
+                    password Is
+                    requird</div>
+
+            </ng-container>
+        </div>
+        <!--  -->
+        <!-- category -->
+        <a> <button type="submit" class="btn btn-outline-success m-2">Submit</button></a>
+        <a [routerLink]="'/admin_page'"> <button class="btn btn-success">Back</button></a>
+    </form>
+    <!-- form -->
+</div>

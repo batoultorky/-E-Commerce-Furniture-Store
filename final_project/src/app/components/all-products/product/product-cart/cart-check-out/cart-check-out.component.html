@@ -1,0 +1,52 @@
+<div class="row parentCart container">
+    <div class="ChildOne">
+        <h2>Cart totals</h2>
+        <div class="hadder">
+            <div class="coupon" style="border: none;">
+                <div class="">
+                    <div class="p-0">
+                        <div *ngIf="showCouponForm" style="height: 16vh;">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="text-light">Enter coupon to get 20% discount</h5>
+                                <svg xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;" width="16" height="16"
+                                    fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16"
+                                    (click)="toggleCouponForm()">
+                                    <path
+                                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                </svg>
+                            </div>
+                            <form class="coupon d-flex align-content-between" id="coupon" (ngSubmit)="applyCoupon()">
+                                <div class="text-input coupon-input me-5">
+                                    <input class="pl-5" type="text" id="coupon-input" name="coupon-input"
+                                        [(ngModel)]="coupon" autocapitalize="off" autocomplete="off"
+                                        placeholder="Enter code" aria-invalid="false" title="" value="">
+
+                                </div>
+
+                                <button type="submit" class="bordersum">
+                                    <span class="">Apply</span>
+                                </button>
+                            </form>
+                            <p class="text-danger m-0" *ngIf="invalidCoupon">*invalid Coupon</p>
+                        </div>
+                        <a *ngIf="!showCouponForm" class=" " style="font-size: 18px;" (click)="toggleCouponForm()">Click
+                            here to Add coupon</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="hadder align-content-around  justify-content-between d-flex">
+            <p class="sub ">Subtotal</p>
+            <strong>{{Subtotal|currency}}</strong>
+        </div>
+        <div class="hadder align-content-between justify-content-between  d-flex">
+            <p class="totel">Total</p>
+            <strong>{{total|currency}}</strong>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <a herf="#" class="btn btn-black btn-lg py-3 btn-block ">Proceed To Checkout</a>
+    </div>
+</div>

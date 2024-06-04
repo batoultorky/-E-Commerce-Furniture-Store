@@ -1,0 +1,80 @@
+<div class=" container  mt-2 bg-light p-2 ">
+
+  <h3 class="text-center mt-1 p-3">{{id==0?'Add New Product':'Update Product'}}</h3>
+
+
+
+
+  <!-- form -->
+
+  <form class="p-5" (submit)="ProductHand($event)" [formGroup]="ProductForm">
+ 
+    <!-- name of product -->
+    <div class="mb-3">
+      <label for="exampleInputName" class="form-label">Product Name</label>
+      <input name="title" type="text" class="form-control" id="exampleInputProductName" aria-describedby="emailHelp"
+        formControlName="title">
+      <ng-container *ngIf="getProductName.touched">
+        <div *ngIf="getProductName.hasError('required')" id="emailHelp" class="form-text text-danger">Product Name Is
+          requird</div>
+
+      </ng-container>
+    </div>
+    <!--  -->
+    <!-- Description -->
+    <div class="mb-3">
+      <label for="exampleInputDescription" class="form-label">Description</label>
+      <textarea name="desc" class="form-control" formControlName="desc"></textarea>
+      <ng-container *ngIf="ProductDescripion.touched">
+        <div *ngIf="ProductDescripion.hasError('required')" id="emailHelp" class="form-text text-danger">Product
+          Description Is
+          requird</div>
+
+      </ng-container>
+    </div>
+    <!-- price -->
+    <div class="mb-3 ">
+      <label for="exampleInputPrice" class="form-label">Price</label>
+      <input name="price" type="number" class="form-control" id="exampleInputPrice" formControlName="price">
+      <ng-container *ngIf="ProductPrice.touched">
+        <div *ngIf="ProductPrice.hasError('required')" id="emailHelp" class="form-text text-danger">Product price Is
+          requird</div>
+
+      </ng-container>
+    </div>
+
+    <!-- category -->
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupSelect01">category</label>
+      <select name="category" class="form-control" id="inputGroupSelect01" formControlName="category">
+        <option selected>Choose...</option>
+        <option value="Modern_Sofa">Modern_Sofa</option>
+        <option value="Office_Set">Office_Set</option>
+        <option value="Lighting">Lighting</option>
+        <option value="Swing_Chair">Swing_Chair</option>
+      </select>
+      <ng-container *ngIf="ProductCategory.touched">
+        <div *ngIf="ProductCategory.hasError('required')" id="emailHelp" class="form-text text-danger">Product category
+          Is
+          requird</div>
+
+      </ng-container>
+    </div>
+    <!-- productUrlImage -->
+    <div class="mb-3">
+      <label for="exampleInputproductUrlImage" class="form-label">Product Image</label>
+      <img class="form-control" [src]="base64" *ngIf="base64"
+        style="width: 200px; height: 200px; background-size: 100% 100%;">
+      <input (change)="uploadImage($event)" name="image" type="file" class="form-control"
+        id="exampleInputproductUrlImage" formControlName="image">
+  
+    </div>
+
+
+    <!--  -->
+    <!-- category -->
+    <a> <button type="submit" class="btn btn-outline-success m-2">Submit</button></a>
+    <a [routerLink]="'/admin_page'"> <button class="btn btn-success">Back</button></a>
+  </form>
+  <!-- form -->
+</div>

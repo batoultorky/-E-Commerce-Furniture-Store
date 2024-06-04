@@ -1,0 +1,9 @@
+a {
+    cursor: pointer
+}
+
+th,
+td {
+    text-align: center;
+    align-content: center;
+}

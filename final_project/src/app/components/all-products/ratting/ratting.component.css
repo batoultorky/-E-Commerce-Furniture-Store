@@ -1,0 +1,9 @@
+.starsContainer {
+    display: flex;
+    width: 8vw;
+    justify-content: space-between;
+}
+
+.starsContainer .star {
+    color: orange;
+}

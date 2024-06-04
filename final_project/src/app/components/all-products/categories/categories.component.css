@@ -1,0 +1,68 @@
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 2vh;
+    grid-template-areas:
+        "lights sofa sofa"
+        "lights swingChair office";
+}
+
+.categories .category {
+    cursor: pointer;
+    opacity: 0.1;
+    border-radius: 15px;
+    position: relative;
+}
+
+.categories .lights {
+    grid-area: lights;
+    width: 31.5vw;
+    height: 102vh;
+    background-image: url('../../../../assets/Images/categories/Lights.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.categories .sofa {
+    grid-area: sofa;
+    width: 63.7vw;
+    height: 50vh;
+    background-image: url('../../../../assets/Images/categories/Sofa.png');
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.categories .swingChair {
+    grid-area: swingChair;
+    width: 31.5vw;
+    height: 50vh;
+    background-image: url('../../../../assets/Images/categories/SwingChair.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.categories .office {
+    grid-area: office;
+    width: 31.5vw;
+    height: 50vh;
+    background-image: url('../../../../assets/Images/categories/Office.png');
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.categories .active {
+    opacity: 1;
+}
+
+.categories .category p {
+    background-color: white;
+    padding-inline: 2vw;
+    padding-block: 2vh;
+    border-radius: 20px;
+    width: fit-content;
+    position: absolute;
+    bottom: 3vh;
+    left: 2vw;
+    font-weight: bold;
+}

@@ -1,0 +1,70 @@
+.btn {
+    font-weight: 500;
+    padding: 8px 10px;
+    border-radius: 25px;
+    color: #3B5D50;
+    background-color: #fff;
+    border-color: #8baa9f;
+    font-size: 18px;
+    width: 100%;
+}
+
+.parentCart {
+    margin-top: 5vh;
+    margin-left: 3vw;
+    /* margin-inline: auto ; */
+    padding: 30px;
+    background-color: #8baa9f;
+    opacity: 1;
+    height: fit-content;
+    border-radius: 18px;
+    width: 28vw
+}
+
+.ChildOne h2 {
+    color: #3B5D50;
+    font-size: 22px;
+    font-weight: 550;
+    line-height: 50px;
+    text-align: left;
+    margin-bottom: 12px;
+    padding-bottom: 0;
+    margin-top: 0;
+}
+
+.hadder {
+    border-top: 1px solid hsla(0, 0%, 7%, .11);
+    padding: 16px 0px 16px 0px;
+    line-height: 30px;
+}
+
+.hadder a {
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 4vw;
+}
+
+.sub {
+    /* margin-right: 75%; */
+}
+
+.totel {
+    /* margin-right: 82%; */
+}
+
+.bordersum {
+    border-radius: 12px;
+    background-color: #3B5D50;
+    color: #fff;
+    width: 40%;
+}
+
+#coupon-input {
+    border-radius: 4px;
+    width: 100%
+}
+
+/* strong {
+    color: rgba(246, 228, 63, 0.976);
+} */

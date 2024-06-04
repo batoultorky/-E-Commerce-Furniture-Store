@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- import Montserrat from google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
+  <!-- import css file-->
+  <link href="form.component.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container mt-4 mb-4" #container>
+    <div class="form-container sign-up-container">
+      <form (submit)="registerHandler($event)" [formGroup]="registerForm">
+        <div class="row mt-4">
+          <h1>Sign Up</h1>
+        </div>
+        <div class="row social-container">
+          <a href="#" class="social"><i class="bi bi-facebook fs-3"></i></a>
+          <a href="#" class="social"><i class="bi bi-google fs-3"></i></a>
+          <a href="#" class="social"><i class="bi bi-linkedin fs-3"></i></a>
+        </div>
+        <div class="row">
+          <span class="normalfont head">or use your email for registration</span>
+        </div>
+        <input type="text" placeholder="fullName" class="form-control normalfont" name="fullName"
+          formControlName="fullName" />
+          <ng-container *ngIf="getName.touched">
+            <div *ngIf="getName.hasError('required')" id="emailHelp" class="form-text text-danger normalfont"> field is Required </div>
+            </ng-container >
+        <input type="text" placeholder="Username" class="form-control normalfont" name="username"
+          formControlName="username" />
+          <ng-container *ngIf="getUName.touched">
+            <div *ngIf="getUName.hasError('required')" id="emailHelp" class="form-text text-danger normalfont">field is Required </div>
+            </ng-container >
+        <input type="email" placeholder="Email" class="form-control normalfont" name="email" formControlName="email" />
+       <!--start of the two validations for email -->
+       <ng-container *ngIf="getEmail.touched">
+        <div *ngIf="getEmail.hasError('required')" id="emailHelp" class="form-text text-danger normalfont">Email is
+          Required</div>
+        <div *ngIf="getEmail.hasError('invalidEmail')" id="emailHelp" class="form-text text-danger normalfont">This
+          email does not match right email format</div>
+      </ng-container>
+        <input type="password" placeholder="Password" class="form-control normalfont" name="password"
+          formControlName="password" />
+          <!--start of the two validations for password -->
+        <ng-container *ngIf="getPassword.touched">
+          <div *ngIf="getPassword.hasError('required')" id="emailHelp" class="form-text text-danger normalfont">
+            Password is Required</div>
+          <div *ngIf="getPassword.hasError('invalidPassword')" id="emailHelp" class="form-text text-danger normalfont">
+            This password does not match right password format</div>
+        </ng-container>
+        <!-- end of validations  -->
+        <input type="password" placeholder="Password Confirmation" class="form-control normalfont mb-3"
+          name="confirmPassword" formControlName="confirmPassword" />
+          <!--start of the two validations for password Confirmation -->
+        <ng-container *ngIf="getPasswordConfirmation.touched">
+          <div *ngIf="getPasswordConfirmation.hasError('required')" id="emailHelp"
+            class="form-text text-danger normalfont"> Password Confirmation is Required</div>
+          <div *ngIf="getPasswordConfirmation.hasError('passwordMismatch')" id="emailHelp"
+            class="form-text text-danger normalfont">Password and Password Confirmation do not match</div>
+        </ng-container>
+        <!-- end of validations  -->
+        <div class="row">
+          <button type="submit" class="btn btn btn-block mt-3 mb-4">Sign Up</button>
+          <p *ngIf="errorRegister !== '' && errorRegister!='[object Object]'"  class="text-danger">{{errorRegister}}</p>
+        </div>
+
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form (submit)="loginHandler($event)" [formGroup]="loginForm">
+        <div class="row">
+          <h1>Sign in</h1>
+        </div>
+
+        <div class="row social-container">
+          <a href="#" class="social"><i class="bi bi-facebook fs-3"></i></a>
+          <a href="#" class="social"><i class="bi bi-google fs-3"></i></a>
+          <a href="#" class="social"><i class="bi bi-linkedin fs-3"></i></a>
+        </div>
+
+        <div class="row">
+          <span class="normalfont head">or use your account</span>
+        </div>
+
+        <input type="email" name="email" placeholder="Email" class="form-control normalfont"
+          formControlName="email" />
+          <ng-container *ngIf="getEmail2.touched">
+            <div *ngIf="getEmail2.hasError('required')" id="emailHelp" class="form-text text-danger normalfont">Email is
+              Required</div>
+            <div *ngIf="getEmail2.hasError('invalidEmail')" id="emailHelp" class="form-text text-danger normalfont">This
+              email does not match right email format</div>
+          </ng-container>
+        <input type="password" name="password" placeholder="Password" class="form-control normalfont"
+          formControlName="password" />
+          <ng-container *ngIf="getPassword2.touched">
+            <div *ngIf="getPassword2.hasError('required')" id="emailHelp" class="form-text text-danger normalfont">
+              Password is Required</div>
+            <div *ngIf="getPassword2.hasError('invalidPassword')" id="emailHelp" class="form-text text-danger normalfont">
+              This password does not match right password format</div>
+          </ng-container>
+        <div class="row">
+          <a href="#" class="normalfont head forgot">Forgot password?</a>
+        </div>
+
+        <div class="row">
+          <button type="submit" class="btn btn-success btn-block">Sign In</button>
+        </div>
+        <p *ngIf="myerror !== ''&& myerror!='[object Object]'" class="text-danger">{{ myerror }}</p>
+
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="btn btn-outline-secondary ghost" id="signIn" (click)="signInButtonClick()">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Dear!</h1>
+          <p>Enter your personal details and start the journey with us</p>
+          <button class="btn btn-outline-secondary ghost" id="signUp" (click)="signUpButtonClick()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

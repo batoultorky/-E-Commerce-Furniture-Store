@@ -1,0 +1,27 @@
+<div class="product" [class.listProduct]="!layoutGrid">
+    <div [class.productContainer]="!layoutGrid">
+        <div class="container" [class.listProductImg]="!layoutGrid">
+            <img class="card-img-top" [class.listImg]="!layoutGrid" [src]="product.image" alt="Card image cap">
+            <div class="overlay" [class.listProductIcons]="!layoutGrid">
+                <div [style.display]="inCart.includes(product.id)?'block':'none'"
+                    class="icon animate__animated animate__bounce" (click)="toggleFromToCart(product.id)">
+                    <i class="bi bi-cart-dash-fill"></i>
+                </div>
+                <div class="icon animate__animated animate__bounce"
+                    [style.display]="!inCart.includes(product.id)?'block':'none'"
+                    (click)="toggleFromToCart(product.id)">
+                    <i class="bi bi-cart-plus"></i>
+                </div>
+                <div class="icon animate__animated animate__bounce" id="iDetalis" (click)="openDetails(product.id)">
+                    <i class="bi bi-eye"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card-body" [class.list-card-body]="!layoutGrid">
+            <p class="card-title" [class.list-card-title]="!layoutGrid">{{product.title}}</p>
+            <p class="card-text price text-secondary" [class.listCardPrice]="!layoutGrid">{{product.price | currency}}
+            </p>
+            <app-ratting (Rate)="changeRate($event)" [productId]="product.id" class="gridRatting"></app-ratting>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div class="col-sm-auto bg-light sticky-top">
+            <div style="background-color:#3b5d4f; height: 100vh;"
+                class=" d-flex flex-sm-column flex-row flex-nowrap  align-items-center sticky-top">
+                <!-- nav icons -->
+                <ul
+                    class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap px-2 mb-auto mx-auto text-center align-items-center">
+                    <li class="nav-item">
+                        <a (click)="hiddenNavBar()" [routerLink]="''" class="nav-link py-3 px-2" title=""
+                            data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                            <i class="bi-house fs-1 text-light"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a (click)="taggleFale()" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
+                            data-bs-placement="right" data-bs-original-title="Orders">
+                            <i class="bi-table fs-1 text-light"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a (click)="taggleTrue()" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
+                            data-bs-placement="right" data-bs-original-title="Customers">
+                            <i class="bi-people fs-1 text-light"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- content -->
+        <div style="margin-bottom: 80px;" class="col-sm p-3 min-vh-100 ">
+            <div *ngIf="!flag; else elseBlock">
+                <app-product-table (openDetailsForm)="openDetails($event)"></app-product-table>
+            </div>
+            <ng-template #elseBlock>
+                <app-user-table></app-user-table>
+            </ng-template>
+
+
+
+        </div>
+    </div>
+</div>
+<app-product-details [modalID]="modalID" [details]="details" [hideRatting]="true"></app-product-details>

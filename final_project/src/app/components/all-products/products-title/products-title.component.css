@@ -1,0 +1,45 @@
+.titleSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    height: 30vh;
+    padding-inline: 5vw;
+    margin-top: 5vh;
+    position: relative;
+}
+
+.titleSection .header {
+    background-color: #3b5d50;
+    width: fit-content;
+    padding-block: 3vh;
+    padding-inline: 5vw;
+    border-radius: 0px 45px 45px 0px;
+    color: white;
+    margin: 0px;
+}
+
+.titleSection .layoutIcons {
+    display: flex;
+    color: #3b5d50;
+    align-items: end;
+}
+
+.titleSection .layoutIcons svg {
+    margin-inline: 1vw;
+    cursor: pointer;
+}
+
+.titleSection .layoutIcons .cartWrapper .count {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(7, 89, 241);
+    position: absolute;
+    bottom: 2vh;
+    right: 5vw;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}

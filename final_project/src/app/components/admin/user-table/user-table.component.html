@@ -1,0 +1,50 @@
+<div style="height: 80vh; " class="container mt-5 ">
+
+  <!-- header title -addbutton- search -->
+  <div style="background-color: #3b5d4f;" class="row alert text-center">
+    <div class="col-6 ">
+      <h3 class=" text-start text-light">All User</h3>
+    </div>
+
+    <div class="col-6 text-end">
+      <button [routerLink]="['/add_admin']" class="btn  btn-light align-self-end">Add New Admin</button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- table -->
+  <div style="height: 100% ;background-color: white; overflow-y: scroll;">
+    <table class="table table-bordered">
+
+      <thead>
+        <tr>
+
+          <th scope="col-2 text-center">Full Name</th>
+          <th scope="col-2 text-center">User Name</th>
+          <th scope="col text-center">Email</th>
+
+          <th class="col-2 text-center" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="height: 100px; overflow-y: auto;" *ngFor="let user of users">
+          <th scope="row">{{user.fullName}}</th>
+          <td>{{user.userName}}</td>
+          <td>{{user.email}}</td>
+
+
+          <td class="col-2 text-center">
+
+            <a (click)="DeleteUser(user.id)"><i class="bi bi-trash3-fill text-danger fs-3 mx-3"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- table -->
+</div>

@@ -1,0 +1,166 @@
+.product {
+    height: 60vh;
+    margin-inline: 5vw;
+    margin-block: 5vh;
+    min-width: 10rem;
+    max-width: 20rem;
+    cursor: pointer;
+}
+
+.listProduct {
+    width: 100%;
+    min-width: none;
+    max-width: none;
+    height: 30vh;
+    position: relative;
+    padding-block: 0vh;
+    margin-block: 8vh;
+    margin-inline: 0px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-right: 0px;
+}
+
+.listProduct:hover {
+
+    box-shadow: 1px 1px 1px -1px rgba(59, 93, 80, 1);
+}
+
+.product .productContainer {
+    width: 100%;
+    border-radius: 0px 30px 30px 0px;
+    display: flex;
+    padding-block: 2vh;
+    position: relative;
+    padding-right: 5vw;
+
+}
+
+.product img {
+    min-height: 30vh;
+    max-height: 40vh;
+    cursor: zoom-in;
+}
+
+.product img:hover {
+    transform: scale(1.7, 1.5);
+}
+
+.product .listProductImg {
+    width: 20vw;
+    height: 30vh;
+    margin-bottom: 0px;
+    position: static;
+    border: none;
+}
+
+.product .listImg {
+    width: 12vw;
+    max-height: 30vh;
+    border: none;
+}
+
+.overlay {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    bottom: 0px;
+    right: 0px;
+    opacity: 0;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.product .container .listProductIcons {
+    position: absolute;
+    bottom: 9vh;
+    right: 5vw;
+    opacity: 1;
+}
+
+.overlay .icon {
+    padding-inline: 1vw;
+    padding-block: 1vh;
+    color: #3b5d50;
+    margin-inline: 5px;
+    cursor: pointer;
+    display: block;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.product .container .overlay .icon:hover {
+    background-color: #3b5d50;
+    color: white;
+}
+
+.product .container .overlay .icon i {
+    font-size: 18px;
+}
+
+.product .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product .list-card-body {
+    justify-content: start;
+    padding-left: 5vw;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.product .card-body .card-title {
+    font-size: 14px;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: bold;
+    padding-inline: 1vw;
+}
+
+.product .card-body .list-card-title {
+    text-align: center;
+    padding-block: 5vh;
+    font-size: 20px;
+    color: #3b5d50;
+    height: 15vh;
+    margin-right: 2vw;
+    display: flex;
+    justify-content: start;
+}
+
+.product .card-body .price {
+    padding-inline: 1vw;
+}
+
+.product .card-body .listCardPrice {
+    margin-bottom: 3vh;
+}
+
+.product .card-body .starsContainer {
+    display: flex;
+    width: 10vw;
+    justify-content: space-between;
+}
+
+.product .card-body .gridRatting {
+    padding-left: 1vw;
+}
+
+.container {
+    height: 40vh;
+    display: flex;
+    align-items: start;
+    cursor: pointer;
+    justify-content: center;
+    position: relative;
+}
+
+.product:hover {
+    translate: -1vw -1vh;
+}

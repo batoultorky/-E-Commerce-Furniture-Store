@@ -1,0 +1,51 @@
+.active-link {
+    border-bottom: #f9bf29 solid 5px;
+}
+
+.navbar-collapse {
+    margin-right: 250px;
+}
+
+.nav-item {
+    margin: 0px 20px;
+}
+
+nav {
+    background-color: #3b5d50 !important;
+}
+
+nav a {
+    color: white !important;
+
+}
+i {
+    cursor: pointer;
+}
+
+.nav-link:focus {
+    border-bottom: #f9bf29 solid 5px;
+}
+.logout{
+
+    position: absolute;;
+    right: 8vw;
+
+}
+.cartWrapper .count {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(7, 89, 241);
+    position: absolute;
+    bottom: 2vh;
+    right: 5vw;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+.userwelcome{
+    font-size: 14px;
+    font-weight: bold;
+}

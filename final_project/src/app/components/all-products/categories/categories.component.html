@@ -1,0 +1,22 @@
+<div class="container-fluid categories py-3">
+    <div class="lights category" [class.active]="activeCategories[0]" (click)="chooseCategory(0)">
+        <div>
+            <p>For Modern Lights</p>
+        </div>
+    </div>
+    <div class="sofa category" [class.active]="activeCategories[1]" (click)="chooseCategory(1)">
+        <div>
+            <p>For Modern Sofas</p>
+        </div>
+    </div>
+    <div class="swingChair category" [class.active]="activeCategories[2]" (click)="chooseCategory(2)">
+        <div>
+            <p>For Swing Chairs</p>
+        </div>
+    </div>
+    <div class="office category " [class.active]="activeCategories[3]" (click)="chooseCategory(3)">
+        <div>
+            <p>For Office Sets</p>
+        </div>
+    </div>
+</div>
